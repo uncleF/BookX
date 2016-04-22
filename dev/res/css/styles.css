@@ -1,0 +1,101 @@
+/* Typography & Vertical Rhythm */
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+body {
+  color: #333333;
+  font-family: "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+  -webkit-font-feature-settings: "liga", "kern";
+  -moz-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+  -epub-hyphens: manual;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+}
+
+h2 {
+  font-weight: bold;
+  text-rendering: auto;
+  -webkit-break-after: avoid;
+  -moz-break-after: avoid;
+  page-break-after: avoid;
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h2 {
+  margin: 24px 0;
+  margin: 1.5rem 0;
+  font-size: h2;
+  font-size: h2/16pxrem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+p {
+  margin: 24px 0;
+  margin: 1.5rem 0;
+}
+
+/* Selection */
+
+::-moz-selection {
+  color: #ffffff;
+  background: #337ab7;
+}
+
+::selection {
+  color: #ffffff;
+  background: #337ab7;
+}
+
+/* Forms */
+
+input::-moz-focus-inner, button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+/* Layout Base */
+
+html {
+  -webkit-overflow-scrolling: touch;
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  min-width: txf-breakpoint(desktopMin);
+  min-height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: #ffffff;
+}

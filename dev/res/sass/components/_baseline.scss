@@ -1,0 +1,685 @@
+/* Typography & Vertical Rhythm */
+
+html {
+  @include tx-baseline;
+  text-size-adjust: 100%;
+}
+
+body {
+  @include tx-hyphens;
+  color: $text;
+  font-family: $font-sans;
+  font-feature-settings: 'liga', 'kern';
+}
+
+%HTML5BlocksStyle {
+  display: block;
+}
+
+article {
+  @extend %HTML5BlocksStyle;
+}
+
+aside {
+  @extend %HTML5BlocksStyle;
+}
+
+canvas {
+  @extend %HTML5BlocksStyle;
+}
+
+figure {
+  @extend %HTML5BlocksStyle;
+}
+
+figcaption {
+  @extend %HTML5BlocksStyle;
+}
+
+footer {
+  @extend %HTML5BlocksStyle;
+}
+
+header {
+  @extend %HTML5BlocksStyle;
+}
+
+hgroup {
+  @extend %HTML5BlocksStyle;
+}
+
+nav {
+  @extend %HTML5BlocksStyle;
+}
+
+main {
+  @extend %HTML5BlocksStyle;
+}
+
+progress {
+  @extend %HTML5BlocksStyle;
+}
+
+section {
+  @extend %HTML5BlocksStyle;
+}
+
+summary {
+  @extend %HTML5BlocksStyle;
+}
+
+%headerStyle {
+  font-weight: bold;
+  text-rendering: auto;
+  page-break-after: avoid;
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 2);
+  @include tx-font-size(h1);
+}
+
+h2 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 1);
+  @include tx-font-size(h2);
+}
+
+h3 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 1);
+  @include tx-font-size(h3);
+}
+
+h4 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 1);
+  @include tx-font-size(h4);
+}
+
+h5 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 1);
+  @include tx-font-size(h5);
+}
+
+h6 {
+  @extend %headerStyle;
+  @include tx-rhythm(1, 1);
+  @include tx-font-size(h6);
+}
+
+%marginStyle {
+  @include tx-rhythm(1, 1);
+}
+
+%monoStyle {
+  font-family: $font-mono;
+}
+
+p {
+  @extend %marginStyle;
+  @extend %hyphenStyle;
+}
+
+dl {
+  @extend %marginStyle;
+}
+
+dt {
+  @include tx-rhythm(1, .5);
+  font-weight: bold;
+}
+
+dd {
+  @include tx-rhythm(.5, .5, $mlft: 1.5em);
+  font-style: italic;
+}
+
+ul {
+  @extend %marginStyle;
+  @extend %u-listResetStyle;
+  list-style-type: disc;
+}
+
+ol {
+  @extend %marginStyle;
+  list-style-type: decimal;
+}
+
+%nestedListsStyle {
+  @include tx-rhythm(1, 1, $mlft: 1.5em);
+}
+
+li {
+  @include tx-rhythm(.5, .5);
+
+  >ul {
+    @extend %nestedListsStyle;
+  }
+
+  >ol {
+    @extend %nestedListsStyle;
+  }
+
+}
+
+%quoteEmphasisStyle {
+  font-style: italic;
+}
+
+%attentionStyle {
+  font-weight: bold;
+}
+
+%highlightedStyle {
+  $highlighted-color: $red;
+
+  color: $highlighted-color;
+}
+
+pre {
+  @extend %marginStyle;
+  @extend %monoStyle;
+  @extend %highlightedStyle;
+  overflow: hidden;
+  padding: 0 1.5em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  @extend %monoStyle;
+  @extend %highlightedStyle;
+}
+
+samp {
+  @extend %monoStyle;
+  @extend %highlightedStyle;
+}
+
+var {
+  @extend %monoStyle;
+  @extend %highlightedStyle;
+  @extend %attentionStyle;
+  font-style: normal;
+}
+
+tt {
+  @extend %monoStyle;
+}
+
+strong {
+  @extend %attentionStyle;
+}
+
+b {
+  @extend %attentionStyle;
+}
+
+%quotesStyle {
+  quotes: none;
+
+  &:before,
+  &:after {
+    content: none;
+  }
+
+}
+
+blockquote {
+  @extend %quoteEmphasisStyle;
+  @extend %quotesStyle;
+  @include tx-rhythm(1, 1, $mrgt: 3em, $mlft: 3em);
+}
+
+em {
+  @extend %quoteEmphasisStyle;
+}
+
+cite {
+  @extend %quoteEmphasisStyle;
+}
+
+q {
+  @extend %quoteEmphasisStyle;
+  @extend %quotesStyle;
+}
+
+i {
+  @extend %quoteEmphasisStyle;
+}
+
+%interactiveStyle {
+  text-decoration: none;
+  cursor: help;
+}
+
+%interactiveHighlightStyle {
+  $interactiveHighlight-color: $blue;
+
+  border-bottom: 1px dotted $interactiveHighlight-color;
+  color: $interactiveHighlight-color;
+}
+
+%removedStyle {
+  text-decoration: line-through;
+}
+
+%acronymAbbrStyle {
+  margin: 0 -.075em 0 0;
+  letter-spacing: .075em;
+}
+
+address {
+  @extend %marginStyle;
+  font-style: normal;
+}
+
+dfn {
+  @extend %attentionStyle;
+}
+
+acronym {
+  @extend %attentionStyle;
+  @extend %interactiveStyle;
+  @extend %interactiveHighlightStyle;
+  @extend %acronymAbbrStyle;
+}
+
+abbr {
+  @extend %attentionStyle;
+  @extend %interactiveStyle;
+  @extend %interactiveHighlightStyle;
+  @extend %acronymAbbrStyle;
+}
+
+ins {
+  @extend %interactiveStyle;
+  @extend %interactiveHighlightStyle;
+}
+
+mark {
+  @extend %interactiveHighlightStyle;
+}
+
+del {
+  $del-color: $gray;
+  $del-borderWidth: 1px;
+
+  @extend %removedStyle;
+  border-bottom: $del-borderWidth dotted $del-color;
+  color: $del-color;
+}
+
+strike {
+  @extend %removedStyle;
+}
+
+s {
+  @extend %removedStyle;
+}
+
+kbd {
+  $kbd-bg: $gray;
+
+  @extend %attentionStyle;
+  @include tx-inline-block;
+  @include tx-grid-height(1, 1);
+  padding: 0 .5em;
+  border-radius: 3px;
+  background: $kbd-bg;
+  background-clip: padding-box;
+  font-weight: bold;
+  font-family: $font-mono;
+  letter-spacing: .1em;
+  vertical-align: top;
+}
+
+%supSubStyle {
+  @include tx-font-size(small, 0);
+  position: relative;
+}
+
+sup {
+  @extend %supSubStyle;
+  top: -.65em;
+}
+
+sub {
+  @extend %supSubStyle;
+  bottom: -.25em;
+}
+
+big {
+  @include tx-font-size(large, 0);
+}
+
+small {
+  @include tx-font-size(small, 0);
+}
+
+u {
+  text-decoration: underline;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+audio {
+  @extend %marginStyle;
+}
+
+video {
+  @extend %marginStyle;
+}
+
+caption {
+  @include tx-rhythm-padding(0, .5);
+  font-weight: bold;
+  text-align: left;
+}
+
+%tableCellStyle {
+  $tableCell-borderColor: $gray;
+
+  @include tx-table-borders(1px, 1, $bcolor: $tableCell-borderColor, $prgt: ($gap / 2), $plft: ($gap / 2));
+}
+
+table {
+  @extend %marginStyle;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  @extend %tableCellStyle;
+}
+
+th {
+  @extend %attentionStyle;
+  @extend %tableCellStyle;
+  text-align: left;
+}
+
+fieldset {
+  display: block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+legend {
+  $legend-padding: 1.5em;
+
+  position: relative;
+  left: -$legend-padding;
+  padding: 0 $legend-padding;
+  font-weight: bold;
+}
+
+hr {
+  $hr-borderColor: $black;
+
+  @include tx-rhythm(1, 1);
+  display: block;
+  height: 0;
+  padding: 0;
+  border-top: 1px solid $hr-borderColor;
+}
+
+
+
+/* Selection */
+
+::selection {
+  color: $selection-color;
+  background: $selection-background;
+}
+
+
+
+/* Focus */
+
+%focusStyle {
+
+  &:focus {
+    outline: $focus-outlineWidth dotted $focus-outlineColor;
+  }
+
+}
+
+
+
+/* Fast Touch */
+
+%touchAction {
+  touch-action: manipulation;
+}
+
+
+
+/* Links */
+
+a {
+  @extend %focusStyle;
+  @extend %touchAction;
+  color: $link;
+  text-decoration: underline;
+  text-decoration-color: rgba($link, $underlineOpacity);
+  transition: color $UITransition, text-decoration-color $UITransition;
+
+  &:visited {
+    color: $visited;
+    text-decoration-color: rgba($visited, $underlineOpacity);
+  }
+
+  &:hover {
+    color: $hover;
+    text-decoration-color: rgba($hover, $underlineOpacity);
+  }
+
+  &:active {
+    color: $active;
+    text-decoration-color: rgba($active, $underlineOpacity);
+  }
+
+}
+
+
+
+/* Forms */
+
+label {
+  @extend %touchAction;
+  cursor: pointer;
+}
+
+%formBaselineStyle {
+  @extend %focusStyle;
+  margin: 0;
+  font-family: inherit;
+}
+
+%formFontStyle {
+  font-size: inherit;
+}
+
+%formBoxSizingStyle {
+  box-sizing: content-box;
+}
+
+%formBorderResetStyle {
+  border: 0;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+}
+
+%formTextResetStyle {
+  text-transform: none;
+}
+
+%formAlignStyle {
+  vertical-align: top;
+}
+
+%formStyle {
+  border: $field-borderWidth solid $field-borderColor;
+}
+
+%formRadioCheckboxStyle {
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+%formAppearanceResetStyle {
+  appearance: none;
+}
+
+%formInactiveStyle {
+  opacity: .5;
+  cursor: default;
+  cursor: not-allowed;
+}
+
+%formPlaceholderStyle {
+  $formPlaceholderStyle-color: $gray;
+
+  &::placeholder {
+    color: $formPlaceholderStyle-color;
+    opacity: 1;
+  }
+
+  &:placeholder-shown {
+
+  }
+
+}
+
+input {
+  @extend %formBaselineStyle;
+  @extend %formFontStyle;
+  @extend %formBoxSizingStyle;
+  @extend %formBorderResetStyle;
+  @extend %formAlignStyle;
+  @extend %formPlaceholderStyle;
+
+  &[type='radio'] {
+    @extend %formRadioCheckboxStyle;
+  }
+
+  &[type='checkbox'] {
+    @extend %formRadioCheckboxStyle;
+  }
+
+  &[type='file'] {
+    height: auto;
+    border: 0;
+  }
+
+  &[type='search'] {
+    @extend %formAppearanceResetStyle;
+  }
+
+  &[type='number'] {
+    @extend %formAppearanceResetStyle;
+
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+
+  }
+
+  &[disabled] {
+    @extend %formInactiveStyle;
+  }
+
+  &[readonly] {
+    @extend %formInactiveStyle;
+  }
+
+}
+
+select {
+  @extend %formBaselineStyle;
+  @extend %formFontStyle;
+  @extend %formTextResetStyle;
+  @extend %formAlignStyle;
+  @extend %formStyle;
+  @extend %touchAction;
+  @include tx-grid-height(1.5, $lh: false);
+  vertical-align: top;
+
+  &[multiple] {
+    @include tx-grid-height(5, $lh: false);
+  }
+
+}
+
+%buttonStyle {
+  @extend %touchAction;
+  @include tx-grid-height(1.5, $lh: false);
+  padding: 0 ($gap / 2);
+  cursor: pointer;
+}
+
+button {
+  @extend %formBaselineStyle;
+  @extend %formFontStyle;
+  @extend %formBoxSizingStyle;
+  @extend %formBorderResetStyle;
+  @extend %formTextResetStyle;
+  @extend %buttonStyle;
+
+  &[disabled] {
+    @extend %formInactiveStyle;
+  }
+
+}
+
+textarea {
+  @extend %formBaselineStyle;
+  @extend %formBoxSizingStyle;
+  @extend %formStyle;
+  @extend %formPlaceholderStyle;
+  @include tx-form-height(9, 1);
+  @include tx-rhythm-padding(.25, .25, $prgt: ($gap / 2), $plft: ($gap / 2));
+  display: block;
+  overflow: auto;
+  font-size: inherit;
+
+  &[disabled] {
+    @extend %formInactiveStyle;
+  }
+
+  &[readonly] {
+    @extend %formInactiveStyle;
+  }
+
+}
+
+
+
+/* HDPI Baseline */
+
+@media only screen and (min-resolution: 1.5dppx), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 150dpi) {}
+
+
+
+/* Large Resolution Baseline */
+
+@media only screen and (min-width: txf-breakpoint(desktopWide)) {}

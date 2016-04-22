@@ -1,0 +1,39 @@
+{
+  "color_variables_files":
+  [
+    "/Users/uncleFucka/Projects/BookX/dev/res/sass/project/_project.scss"
+  ],
+  "folders":
+  [
+    {
+      "folder_exclude_patterns":
+      [
+        "*"
+      ],
+      "file_exclude_patterns":
+      [
+        "*.zip",
+        "*.sublime-project"
+      ],
+      "follow_symlinks": true,
+      "name": "BookX: Project",
+      "path": "."
+    }, {
+      "follow_symlinks": true,
+      "name": "BookX: Chapters",
+      "path": "dev/chapters"
+    }, {
+      "follow_symlinks": true,
+      "name": "BookX: HTML Components",
+      "path": "dev/res/templates/components"
+    }, {
+      "follow_symlinks": true,
+      "name": "BookX: Sass",
+      "path": "dev/res/sass"
+    }, {
+      "follow_symlinks": true,
+      "name": "BookX: Docs",
+      "path": "docs"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "",
+  "language": "",
+  "id": {
+    "value": "",
+    "scheme": "UUID"
+  },
+  "description": "",
+  "keywords": [],
+  "authors": [{
+    "name": "",
+    "as": ""
+  }],
+  "contributors": [],
+  "editor": null,
+  "dates": {
+    "original-publication": "",
+    "opf-publication": ""
+  },
+  "license": null,
+  "publisher": null,
+  "outline": {
+    "frontmatter": [{
+      "name": "cover",
+      "title": "cover"
+    }],
+    "backmatter": [{
+      "name": "colophon",
+      "title": "colophon"
+    }],
+    "body": []
+  }
+}
